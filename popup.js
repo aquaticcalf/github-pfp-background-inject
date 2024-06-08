@@ -13,4 +13,10 @@ async function imgurlsend() {
     )
 }
 
-imgurlsend()
+let githubusername = document.getElementById("github-username")
+
+githubusername.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        imgurlsend()
+    }
+})
