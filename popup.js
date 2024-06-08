@@ -1,0 +1,16 @@
+async function imgurlsend() {
+    let githubusername = document.getElementById("github-username")
+    let imgurl = "https://github.com/"+githubusername+".png"
+    let queryOptions = { active: true, currentWindow: true }
+    let tabs = await chrome.tabs.query(queryOptions)
+
+    chrome.tabs.sendMessage(
+        tabs[0].id,
+        { msg: imgurl},
+        function (response) {
+            console.log(response)
+        }
+    )
+}
+
+imgurlsend()

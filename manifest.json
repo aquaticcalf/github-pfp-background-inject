@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "github-pfp-background-inject",
+    "version": "1.0",
+    "description": "github-pfp-background-inject",
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "github16.png"
+    },
+    "icons": {
+        "16": "github16.png",
+        "32": "github32.png",
+        "48": "github48.png",
+        "64": "github64.png",
+        "128": "github128.png"
+    },
+    "content_scripts": [
+        {
+            "js": ["content.js"],
+            "matches": [
+                "https://*",
+                "http://*"
+            ]
+        }
+    ]
+}
