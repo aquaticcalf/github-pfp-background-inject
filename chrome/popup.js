@@ -1,8 +1,8 @@
 async function imgurlsend() {
-    let githubusername = document.getElementById("github-username").value
-    let imgurl = "https://github.com/"+githubusername+".png"
-    let queryOptions = { active: true, currentWindow: true }
-    let tabs = await chrome.tabs.query(queryOptions)
+    githubusername = document.getElementById("github-username").value
+    imgurl = "https://github.com/"+githubusername+".png"
+    queryOptions = { active: true, currentWindow: true }
+    tabs = await chrome.tabs.query(queryOptions)
 
     chrome.tabs.sendMessage(
         tabs[0].id,
@@ -13,7 +13,7 @@ async function imgurlsend() {
     )
 }
 
-let githubusername = document.getElementById("github-username")
+githubusername = document.getElementById("github-username")
 
 githubusername.addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
